@@ -10,11 +10,18 @@ async function loadSection(sectionName) {
   await loadComponent(sectionName, `${sectionName}.html`);
 }
 
+document.addEventListener("click", (e) => {
+  const toggle = e.target.closest(".nav-toggle");
+  if (toggle) {
+    document.querySelector("header nav").classList.toggle("open");
+  }
+});
+
 async function init() {
   document.getElementById("app").innerHTML = `
-    <div id="header"></div>
+    <header id="header"></header>
     <main>
-    <div id="equipe-section" />
+    <div id="equipe-section"></div>
     </main>
     <div id="footer"></div>
   `;

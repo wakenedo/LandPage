@@ -4,16 +4,22 @@ async function loadComponent(id, file) {
   document.getElementById(id).innerHTML = html;
 }
 
+async function loadSection(sectionName) {
+  const mainElement = document.querySelector('main');
+  mainElement.innerHTML = `<div id="${sectionName}"></div>`;
+  await loadComponent(sectionName, `${sectionName}.html`);
+}
+
 async function init() {
   document.getElementById("app").innerHTML = `
     <div id="header"></div>
     <main>
-      
     </main>
     <div id="footer"></div>
   `;
 
   await loadComponent("header", "header.html");
+  await loadComponent("section01", "section01.html");
 }
 
 init();

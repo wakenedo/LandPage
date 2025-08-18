@@ -23,7 +23,7 @@ header {
 /* Logo / Título */
 header h1 {
   font-size: 1.25rem;
-
+  margin: 0;
   white-space: nowrap; /* evita quebrar em mobile */
 }
 
@@ -33,7 +33,7 @@ nav ul {
   display: flex;
   gap: 2rem;
   padding: 0;
-  margin: 0;
+  margin: 0.25rem 0;
 }
 
 nav ul li a {
@@ -71,6 +71,12 @@ nav ul li a:hover {
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.3s ease;
+  }
+
+  header h1 {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+    white-space: nowrap; /* evita quebrar em mobile */
   }
 
   nav.open {

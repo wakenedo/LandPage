@@ -60,3 +60,45 @@ function initInteractiveExamples(sectionName) {
     }
   }
 }
+
+// show/hide back button and inject cards for HTML-section
+function handleHeaderButtons(sectionName) {
+  const backBtn = document.querySelector('.back-btn');
+  if (!backBtn) return;
+  if (sectionName && sectionName !== 'equipe-section') {
+    backBtn.style.display = 'inline-block';
+  } else {
+    backBtn.style.display = 'none';
+  }
+
+  backBtn.onclick = async () => {
+    await loadSection('equipe-section');
+    initInteractiveExamples('equipe-section');
+    handleHeaderButtons('equipe-section');
+  };
+}
+
+// inject HTML info cards to match team cards style
+function injectHtmlInfoCards() {
+  const section = document.getElementById('HTML-section');
+  if (!section) return;
+  const container = section.querySelector('.container');
+  const grid = document.createElement('div');
+  grid.className = 'html-info-grid';
+
+  const cards = [
+    {title: 'O que é HTML', text: 'Linguagem de marcação usada para estruturar conteúdos na web.'},
+    {title: 'Estrutura', text: 'Tags como <html>, <head>, <body>, <h1>, <p> e <a>.'},
+    {title: 'HTML5', text: 'Inclui elementos semânticos e APIs para multimídia.'}
+  ];
+
+  cards.forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'html-info-card';
+    card.innerHTML = `<h4>${c.title}</h4><p>${c.text}</p>`;
+    grid.appendChild(card);
+  });
+
+  container.appendChild(grid);
+}
+

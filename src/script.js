@@ -39,11 +39,13 @@ document.addEventListener('click', async (e) => {
   const link = e.target.closest('a[href^="#"]');
   if (link) {
     const hash = link.getAttribute('href').slice(1);
-    if (hash && hash !== 'equipe-section') {
+    if (hash) {
       e.preventDefault();
       await loadSection(hash);
       // initialize interactive bits if present
       initInteractiveExamples(hash);
+      // update the URL hash so direct linking/bookmarks work
+      try { history.pushState(null, '', `#${hash}`); } catch (err) { location.hash = `#${hash}`; }
     }
   }
 });

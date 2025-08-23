@@ -22,21 +22,29 @@ async function init() {
     <header id="header"></header>
     <main>
     <div id="equipe-section"></div>
+    <div id="css-section"></div>
     </main>
     <div id="footer"></div>
   `;
 
   await loadComponent("header", "header.html");
   await loadComponent("equipe-section", "equipe-section.html");
+  await loadComponent("css-section", "css-section.html");
 }
 
+const sections = ["equipe-section", "css-section"];
 
 // intercept links with hash to load sections dynamically
-document.addEventListener('click', async (e) => {
+document.addEventListener("click", async (e) => {
   const link = e.target.closest('a[href^="#"]');
   if (link) {
-    const hash = link.getAttribute('href').slice(1);
-    if (hash && hash !== 'equipe-section') {
+    const hash = link.getAttribute("href").slice(1);
+    if (
+      hash &&
+      hash !== "equipe-section" &&
+      hash !== "css-section" &&
+      sections.includes(hash)
+    ) {
       e.preventDefault();
       await loadSection(hash);
       // initialize interactive bits if present
@@ -49,13 +57,13 @@ document.addEventListener('click', async (e) => {
 init();
 
 function initInteractiveExamples(sectionName) {
-  if (sectionName === 'HTML-section') {
-    const btn = document.getElementById('insert-paragraph');
+  if (sectionName === "HTML-section") {
+    const btn = document.getElementById("insert-paragraph");
     if (btn) {
-      btn.addEventListener('click', () => {
-        const root = document.getElementById('example-root');
-        const p = document.createElement('p');
-        p.textContent = 'Parágrafo inserido dinamicamente.';
+      btn.addEventListener("click", () => {
+        const root = document.getElementById("example-root");
+        const p = document.createElement("p");
+        p.textContent = "Parágrafo inserido dinamicamente.";
         root.appendChild(p);
       });
     }

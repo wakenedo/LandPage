@@ -48,24 +48,7 @@ document.addEventListener("click", async (e) => {
       e.preventDefault();
       await loadSection(hash);
       // initialize interactive bits if present
-      initInteractiveExamples(hash);
     }
   }
 });
-
-// initialize page
 init();
-
-function initInteractiveExamples(sectionName) {
-  if (sectionName === "HTML-section") {
-    const btn = document.getElementById("insert-paragraph");
-    if (btn) {
-      btn.addEventListener("click", () => {
-        const root = document.getElementById("example-root");
-        const p = document.createElement("p");
-        p.textContent = "Parágrafo inserido dinamicamente.";
-        root.appendChild(p);
-      });
-    }
-  }
-}

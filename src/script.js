@@ -8,6 +8,10 @@ async function loadSection(sectionName) {
   const mainElement = document.querySelector("main");
   mainElement.innerHTML = `<div id="${sectionName}"></div>`;
   await loadComponent(sectionName, `${sectionName}.html`);
+  // after loading, run UI bits
+  initInteractiveExamples(sectionName);
+  handleHeaderButtons(sectionName);
+  if (sectionName === 'HTML-section') injectHtmlInfoCards();
 }
 
 document.addEventListener("click", (e) => {
@@ -45,7 +49,16 @@ document.addEventListener('click', async (e) => {
 });
 
 // initialize page
-init();
+// if URL has a hash, load that section; otherwise init default
+const initialHash = location.hash ? location.hash.slice(1) : null;
+if (initialHash) {
+  init().then(async () => {
+    if (initialHash === 'equipe-section') return;
+    await loadSection(initialHash);
+  });
+} else {
+  init();
+}
 
 function initInteractiveExamples(sectionName) {
   if (sectionName === 'HTML-section') {

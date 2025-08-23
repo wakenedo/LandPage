@@ -30,4 +30,34 @@ async function init() {
   await loadComponent("equipe-section", "equipe-section.html");
 }
 
+
+// intercept links with hash to load sections dynamically
+document.addEventListener('click', async (e) => {
+  const link = e.target.closest('a[href^="#"]');
+  if (link) {
+    const hash = link.getAttribute('href').slice(1);
+    if (hash && hash !== 'equipe-section') {
+      e.preventDefault();
+      await loadSection(hash);
+      // initialize interactive bits if present
+      initInteractiveExamples(hash);
+    }
+  }
+});
+
+// initialize page
 init();
+
+function initInteractiveExamples(sectionName) {
+  if (sectionName === 'HTML-section') {
+    const btn = document.getElementById('insert-paragraph');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const root = document.getElementById('example-root');
+        const p = document.createElement('p');
+        p.textContent = 'Parágrafo inserido dinamicamente.';
+        root.appendChild(p);
+      });
+    }
+  }
+}

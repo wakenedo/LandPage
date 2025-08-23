@@ -210,13 +210,5 @@
 }
 
 /* Back button in header */
-.back-btn {
-  background: transparent;
-  border: 1px solid #1abc9c;
-  color: #1abc9c;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-left: 0.5rem;
-}
+
 

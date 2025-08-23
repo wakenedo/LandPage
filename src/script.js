@@ -22,12 +22,14 @@ async function init() {
     <header id="header"></header>
     <main>
     <div id="equipe-section"></div>
+    <div id="HTML-section"></div>
     </main>
     <div id="footer"></div>
   `;
 
   await loadComponent("header", "header.html");
   await loadComponent("equipe-section", "equipe-section.html");
+  await loadComponent("HTML-section", "HTML-section.html");
 }
 
 init();

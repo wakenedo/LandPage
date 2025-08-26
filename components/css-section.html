@@ -1,0 +1,123 @@
+<section class="css-section" id="css-section">
+  <div class="container">
+    <h2>🎨 CSS — Cascading Style Sheets</h2>
+
+    <div class="css-intro">
+      <p>
+        O <strong>CSS</strong> (Cascading Style Sheets) é a linguagem usada
+        para descrever a apresentação das páginas web. Enquanto o
+        <strong>HTML</strong> estrutura o conteúdo, o CSS define o design —
+        cores, espaçamentos, fontes, posicionamento e até animações.
+      </p>
+    </div>
+
+    <div class="css-history">
+      <h3>Breve história</h3>
+      <p>
+        O CSS foi proposto em <strong>1996</strong> por
+        <em>Håkon Wium Lie</em>, quando trabalhava com
+        <em>Tim Berners-Lee</em> no CERN. A ideia era separar a camada de
+        conteúdo (HTML) da camada de apresentação (CSS), tornando o código mais
+        limpo, reutilizável e flexível.
+        Desde então, passou por versões que evoluíram até o
+        <strong>CSS3</strong> e além.
+      </p>
+    </div>
+
+    <div class="css-variations">
+      <h3>Principais versões</h3>
+      <ul>
+        <li><strong>CSS1 (1996):</strong> Estilos básicos como cores e fontes.</li>
+        <li><strong>CSS2 (1998):</strong> Posicionamento de elementos e suporte à impressão.</li>
+        <li><strong>CSS2.1 (2004):</strong> Revisão e compatibilidade entre navegadores.</li>
+        <li><strong>CSS3 (2009+):</strong> Modularizado, trouxe transições, animações, gradientes, sombras e muito mais.
+        </li>
+        <li><strong>CSS atual:</strong> Evolução contínua com <em>Flexbox</em>, <em>Grid Layout</em> e variáveis.</li>
+      </ul>
+    </div>
+
+    <div class="css-examples">
+      <h3>Exemplo de código</h3>
+      <pre class="code-block">/* Exemplo de CSS */
+.css-demo {
+  background: #f0f8ff; /* azul clarinho */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.css-demo.alt-bg {
+  background: #1abc9c;
+  color: #fff;
+}
+
+.demo-title {
+  color: #e67e22;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.demo-text {
+  color: #34495e;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.demo-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.demo-list li:nth-child(1) { color: #e74c3c; }
+.demo-list li:nth-child(2) { color: #3498db; }
+.demo-list li:nth-child(3) { color: #f1c40f; }
+
+.live-example button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.live-example button:hover {
+  background: #2980b9;
+}</pre>
+
+      <h4>Exemplo aplicado</h4>
+      <div class="live-example">
+        <div class="example-output">
+          <h4>Saída do exemplo:</h4>
+          <div class="css-demo" id="css-demo">
+            <h1 class="demo-title">Olá, CSS!</h1>
+            <p class="demo-text">Este texto está estilizado com CSS.</p>
+            <ul class="demo-list">
+              <li style="color:#e74c3c;">Item 1</li>
+              <li style="color:#3498db;">Item 2</li>
+              <li style="color:#f1c40f;">Item 3</li>
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="css-resources">
+        <h3>Recursos</h3>
+        <ul>
+          <li><a href="https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content" target="_blank" rel="noopener">MDN — CSS</a>
+          </li>
+          <li><a href="https://web.dev/blog/state-of-css-2022?hl=pt-br" target="_blank" rel="noopener">web.dev — CSS</a></li>
+          </li>
+          <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/color_value" target="_blank" rel="noopener">MDN — CSS CORES</li>
+        
+        </ul>
+      </div>
+    </div>
+</section>

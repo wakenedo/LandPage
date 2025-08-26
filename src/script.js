@@ -22,9 +22,9 @@ async function init() {
     <header id="header"></header>
     <main>
     <div id="equipe-section"></div>
-    <div id="git-section"></div>
     <div id="HTML-section"></div>
     <div id="css-section"></div>
+    <div id="git-section"></div>
     </main>
     <div id="footer"></div>
   `;

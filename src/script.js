@@ -22,6 +22,7 @@ async function init() {
     <header id="header"></header>
     <main>
     <div id="equipe-section"></div>
+    <div id="HTML-section"></div>
     <div id="css-section"></div>
     </main>
     <div id="footer"></div>
@@ -29,6 +30,7 @@ async function init() {
 
   await loadComponent("header", "header.html");
   await loadComponent("equipe-section", "equipe-section.html");
+  await loadComponent("HTML-section", "HTML-section.html");
   await loadComponent("css-section", "css-section.html");
 }
 

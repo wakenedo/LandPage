@@ -1,0 +1,26 @@
+.html-section {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+  margin-bottom: 2rem;
+}
+
+.html-section h2 { font-size: 2rem; color: #2c3e50; }
+.html-section h3 { color: #34495e; margin-top: 1rem; }
+
+.html-intro p, .html-history p, .html-resources p { color: #444; line-height: 1.6; }
+
+.html-info-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 1.2rem; }
+.html-info-card { padding: 1.2rem; border-radius: 12px; background: #f8f9fa; border: 2px solid #e9ecef; }
+.html-info-card h4 { margin: 0 0 0.5rem 0; color: #2c3e50; }
+
+.code-block { font-family: 'Courier New', monospace; font-size: 0.9rem; }
+
+.example-output { margin-top: 0.8rem; }
+
+@media (max-width: 768px) {
+  .html-info-grid { grid-template-columns: 1fr; }
+}
+
+.html-section .note { font-size: 0.85rem; color: #666; }

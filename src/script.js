@@ -33,24 +33,4 @@ async function init() {
   await loadComponent("HTML-section", "HTML-section.html");
   await loadComponent("css-section", "css-section.html");
 }
-
-const sections = ["equipe-section", "css-section"];
-
-// intercept links with hash to load sections dynamically
-document.addEventListener("click", async (e) => {
-  const link = e.target.closest('a[href^="#"]');
-  if (link) {
-    const hash = link.getAttribute("href").slice(1);
-    if (
-      hash &&
-      hash !== "equipe-section" &&
-      hash !== "css-section" &&
-      sections.includes(hash)
-    ) {
-      e.preventDefault();
-      await loadSection(hash);
-      // initialize interactive bits if present
-    }
-  }
-});
 init();

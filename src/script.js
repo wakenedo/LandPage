@@ -22,19 +22,14 @@ async function init() {
     <header id="header"></header>
     <main>
     <div id="equipe-section"></div>
+    <div id="git-section"></div>
     </main>
     <div id="footer"></div>
   `;
 
   await loadComponent("header", "header.html");
+  await loadComponent("git-section", "git-section.html");
   await loadComponent("equipe-section", "equipe-section.html");
-
-  // Adiciona o event listener após carregar o git section
-  document.addEventListener("click", (e) => {
-    if (e.target.id === "git-btn") {
-      loadSection("git-section");
-    }
-  });
 }
 
 init();

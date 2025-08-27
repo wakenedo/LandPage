@@ -3,7 +3,7 @@
   border-radius: 8px;
   padding: 1.5rem 2rem;
   margin-bottom: 2rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .git-section .section-title {
@@ -65,7 +65,7 @@
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
 }
 
 .git-section th,

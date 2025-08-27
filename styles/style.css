@@ -1,9 +1,89 @@
+#celestial-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Sun & Moon */
+.celestial {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%; /* will be overridden via transform */
+  transform: translate(-50%, -50%);
+}
+.sun {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fff7cc,
+    #ffd56b 60%,
+    #ffb703 100%
+  );
+  z-index: 0;
+  box-shadow: 0 0 40px 10px rgba(255, 214, 98, 0.75),
+    0 0 120px 30px rgba(255, 214, 98, 0.35);
+}
+.moon {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #f6f7fb,
+    #cfd5e6 65%,
+    #9aa3ba 100%
+  );
+  z-index: 0;
+  box-shadow: 0 0 24px 6px rgba(180, 195, 240, 0.5);
+  filter: saturate(0.9);
+}
+
+.newMoon {
+  position: relative;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    #f6f7fb,
+    #cfd5e6 65%,
+    #9aa3ba 100%
+  );
+  box-shadow: 0 0 24px 6px rgba(255, 255, 255, 0.3);
+  filter: saturate(0.3);
+  overflow: hidden;
+}
+
+/* Shadow overlay for crescent effect */
+.newMoon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 100%;
+  background: #1d1d1e; /* night sky color */
+  transform: translateX(15%); /* shift to reveal half */
+}
+
+/* Decorative horizon glow that tracks the gradient */
+.horizon-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    100% 50% at 50% 100%,
+    rgba(255, 153, 70, 0.25) 0%,
+    rgba(255, 153, 70, 0) 60%
+  );
+  opacity: var(--horizon-opacity, 0);
+  transition: opacity 300ms ease;
+}
+
+html,
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f9f9f9;
+  background: var(--sky);
   color: #333;
+  scroll-behavior: smooth;
 }
 
 main {

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "dynamic-sky": "file:../DynamicSky/dynamic-sky-1.0.0.tgz"
+  }
+}

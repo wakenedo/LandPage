@@ -1,38 +1,50 @@
 .git-section {
-  background: #fff;
-  border-radius: 8px;
-  padding: 1.5rem 2rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  position: relative;
+  z-index: 20;
+  padding: 0.5rem 2rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
   margin-bottom: 2rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.git-section .section-title {
-  text-align: center;
-  font-size: 2.2rem;
-  color: #222;
-  margin-bottom: 24px;
-  letter-spacing: 1px;
-}
-
-.git-section p {
-  font-size: 1.1rem;
-  color: #444;
-  text-align: center;
-  margin-bottom: 24px;
-  line-height: 1.6;
-}
-
-.git-section hr {
-  border: none;
-  border-top: 1px solid #e2e8f0;
-  margin: 32px 0;
-}
-
-.git-section h3 {
-  font-size: 1.3rem;
-  color: #2d3748;
-  margin-bottom: 12px;
+.git-section-title {
+  margin: 1rem auto 0;
   text-align: left;
+}
+.git-section-title span {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 200;
+  text-align: left;
+}
+
+.git-section-subtitle {
+  margin: 0.5rem auto 0;
+  text-align: left;
+}
+.git-section-subtitle span {
+  font-style: italic;
+  color: #2c3e50;
+  font-size: 0.85rem;
+  font-weight: 200;
+  text-align: left;
+}
+
+.git-intro {
+  margin: 0.65rem auto 0;
+  color: #2c3e50;
+  font-size: 0.75rem;
+  font-weight: 200;
+  font-style: italic;
+  text-align: left;
+}
+
+.card {
+  background: rgba(147, 161, 231, 0.35); /* semi-transparent blue */
+  backdrop-filter: blur(4px);
+  margin-top: 1rem;
+  -webkit-backdrop-filter: blur(2px); /* for Safari support */
 }
 
 .git-section ul {
@@ -78,8 +90,12 @@
 
 .git-section th {
   background: #edf2f7;
-  color: #2d3748;
+  color: #1abc9c;
   font-weight: 600;
+}
+
+.git-section h3 {
+  color: #1abc9c;
 }
 
 .git-section td code {

@@ -17,6 +17,21 @@ document.addEventListener("click", (e) => {
   }
 });
 
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function attachJavaScriptDemo() {
+  const btn = document.getElementById("d20-btn");
+  const output = document.getElementById("demo");
+
+  if (btn && output) {
+    btn.addEventListener("click", () => {
+      output.textContent = getRndInteger(0, 20);
+    });
+  }
+}
+
 async function init() {
   document.getElementById("app").innerHTML = `
     <header id="header"></header>
@@ -24,6 +39,7 @@ async function init() {
     <div id="equipe-section"></div>
     <div id="HTML-section"></div>
     <div id="css-section"></div>
+    <div id="javascript-section"></div>
     <div id="git-section"></div>
     </main>
     <div id="footer"></div>
@@ -34,5 +50,7 @@ async function init() {
   await loadComponent("equipe-section", "equipe-section.html");
   await loadComponent("HTML-section", "HTML-section.html");
   await loadComponent("css-section", "css-section.html");
+  await loadComponent("javascript-section", "javascript-section.html");
+  attachJavaScriptDemo();
 }
 init();

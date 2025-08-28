@@ -1,0 +1,72 @@
+<section class="javascript-section" id="javascript-section">
+    <div class="javascript-section-title">
+        <span>JavaScript</span>
+    </div>
+    <div class="javascript-intro">
+        <p>
+            JavaScript é uma linguagem de programação usada para criar interatividade e funcionalidades dinâmicas em
+            páginas web.
+        </p>
+    </div>
+    <hr />
+
+    <div class="javascript-history javascript-info-card">
+        <h3>Breve história</h3>
+        <p>
+            JavaScript foi criado por Brendan Eich em 1995 enquanto trabalhava na Netscape, inicialmente para permitir
+            interatividade em páginas web estáticas.
+            Originalmente chamado de "Mocha" e depois "LiveScript", o nome foi alterado para "JavaScript" como parte de
+            uma estratégia de marketing,
+            aproveitando a popularidade do Java. Com o tempo, a linguagem evoluiu de um simples recurso de validação de
+            formulários para uma ferramenta poderosa que hoje domina o desenvolvimento web,
+            sendo usada tanto no lado do cliente quanto no servidor, com vasto suporte e um ecossistema em constante
+            crescimento.
+        </p>
+    </div>
+
+    <div class="javascript-examples javascript-info-card">
+        <h3>Exemplos de código</h3>
+        <pre class="code-block">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;button id="d20-btn"&gt;D20&lt;/button&gt;
+    &lt;p id="demo"&gt;&lt;/p&gt;
+    &lt;script&gt;
+      // agora a lógica está em script.js
+      function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
+
+      document.getElementById("d20-btn").addEventListener("click", () => {
+        document.getElementById("demo").textContent = getRndInteger(0, 20);
+      });
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+
+        <h4>Exemplo inline</h4>
+        <div class="live-example">
+  <div class="example-output" id="javascript-example-output">
+    <h4>Saída do exemplo:</h4>
+    <div id="example-root">
+      <button id="d20-btn">D20</button>
+      <p id="demo"></p>
+    </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="javascript-resources">
+        <h3>Recursos</h3>
+        <ul>
+            <li>
+                <a href="https://www.w3schools.com/js/" target="_blank" rel="noopener">W3schools</a>
+            </li>
+            <li>
+                <a href="https://pt.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">Wikipedia</a>
+            </li>
+        </ul>
+</section>

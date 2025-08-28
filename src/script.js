@@ -17,6 +17,21 @@ document.addEventListener("click", (e) => {
   }
 });
 
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function attachJavaScriptDemo() {
+  const btn = document.getElementById("d20-btn");
+  const output = document.getElementById("demo");
+
+  if (btn && output) {
+    btn.addEventListener("click", () => {
+      output.textContent = getRndInteger(0, 20);
+    });
+  }
+}
+
 async function init() {
   document.getElementById("app").innerHTML = `
     <header id="header"></header>
@@ -36,5 +51,6 @@ async function init() {
   await loadComponent("HTML-section", "HTML-section.html");
   await loadComponent("css-section", "css-section.html");
   await loadComponent("javascript-section", "javascript-section.html");
+  attachJavaScriptDemo();
 }
 init();
